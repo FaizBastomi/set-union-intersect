@@ -50,22 +50,19 @@ int main()
         insertNewNode(H2, newNode);
     }
 
-    printList(H1);
-    printList(H2);
-
     auto start = chrono::high_resolution_clock::now();
     unionIteratif(H1, H2, resUnion);
     auto end = chrono::high_resolution_clock::now();
     auto unionIteratifDuration = chrono::duration_cast<chrono::nanoseconds>(end - start).count();
 
-    cout << "Hasil union iteratif: ";
+    cout << "\n\nHasil union iteratif: ";
     adrNode p = resUnion.first;
     while (p != nullptr)
     {
         cout << p->info << " ";
         p = p->next;
     }
-    cout << "Waktu eksekusi union iteratif: " << unionIteratifDuration << " nanodetik" << endl;
+    cout << "\nWaktu eksekusi union iteratif: " << unionIteratifDuration << " nanodetik" << endl;
 
     deleteAllNodes(resUnion); /* Reset */
     start = chrono::high_resolution_clock::now();
@@ -74,28 +71,28 @@ int main()
     end = chrono::high_resolution_clock::now();
     auto unionRecursiveDuration = chrono::duration_cast<chrono::nanoseconds>(end - start).count();
 
-    cout << "Hasil union rekursif: ";
+    cout << "\n\nHasil union rekursif: ";
     p = resUnion.first;
     while (p != nullptr)
     {
         cout << p->info << " ";
         p = p->next;
     }
-    cout << "Waktu eksekusi union rekursif: " << unionRecursiveDuration << " nanodetik" << endl;
+    cout << "\nWaktu eksekusi union rekursif: " << unionRecursiveDuration << " nanodetik" << endl;
 
     start = chrono::high_resolution_clock::now();
     intersectionIteratif(H1, H2, resIntersection);
     end = chrono::high_resolution_clock::now();
     auto intersectionIteratifDuration = chrono::duration_cast<chrono::nanoseconds>(end - start).count();
 
-    cout << "Hasil irisan iteratif: ";
+    cout << "\n\nHasil irisan iteratif: ";
     p = resIntersection.first;
     while (p != nullptr)
     {
         cout << p->info << " ";
         p = p->next;
     }
-    cout << "Waktu eksekusi irisan iteratif: " << intersectionIteratifDuration << " nanodetik" << endl;
+    cout << "\nWaktu eksekusi irisan iteratif: " << intersectionIteratifDuration << " nanodetik" << endl;
 
     deleteAllNodes(resIntersection); /* Reset */
     start = chrono::high_resolution_clock::now();
@@ -103,14 +100,14 @@ int main()
     end = chrono::high_resolution_clock::now();
     auto intersectionRecursiveDuration = chrono::duration_cast<chrono::nanoseconds>(end - start).count();
 
-    cout << "Hasil irisan rekursif: ";
+    cout << "\n\nHasil irisan rekursif: ";
     p = resIntersection.first;
     while (p != nullptr)
     {
         cout << p->info << " ";
         p = p->next;
     }
-    cout << "Waktu eksekusi irisan rekursif: " << intersectionRecursiveDuration << " nanodetik" << endl;
+    cout << "\nWaktu eksekusi irisan rekursif: " << intersectionRecursiveDuration << " nanodetik" << endl;
 
     deleteAllNodes(resUnion);
     deleteAllNodes(resIntersection);
