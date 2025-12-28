@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1766903774 source:e:\projects\aka-interuni\interuni.cpp
+	"interUni.h"
+	<iostream>
+
+1766903791 e:\projects\aka-interuni\interuni.h
+
+1766903803 source:e:\projects\aka-interuni\main.cpp
+	"interUni.h"
+	<iostream>
+	<sstream>
+	<vector>
+	<chrono>
+
